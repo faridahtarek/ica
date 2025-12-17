@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News & Events - Nawara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo">
+        <img src="logo.png" alt="Nawara Logo" class="logo-img">
+      </a>
+      <nav class="sidebar-nav">
+        <a href="scholarships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+          <span>SCHOLARSHIPS</span>
+        </a>
+        <a href="internships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+            <path d="M9 22v-4h6v4" />
+            <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+          </svg>
+          <span>INTERNSHIPS</span>
+        </a>
+        <a href="cv-analyzer.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" x2="8" y1="13" y2="13" />
+            <line x1="16" x2="8" y1="17" y2="17" />
+          </svg>
+          <span>CV ANALYZER</span>
+        </a>
+        <a href="map.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>MAP</span>
+        </a>
+        <a href="budget.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" />
+            <line x1="8" x2="16" y1="6" y2="6" />
+            <line x1="16" x2="16" y1="14" y2="18" />
+            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
+          </svg>
+          <span>BUDGET<br>AND EXPENSES</span>
+        </a>
+        <a href="news.html" class="nav-link active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+            <path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z" />
+          </svg>
+          <span>NEWS<br>AND EVENTS</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="user-profile.html" class="user-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="page-header animate-slide-in"
+        style="display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h1 class="page-title">LATEST NEWS</h1>
+          <p class="page-subtitle">stay informed, always !!</p>
+        </div>
+        <!-- Trigger Modal Button -->
+        <button class="btn btn-primary" id="createEventBtn">
+          <i class='bx bx-plus'></i> Create Event
+        </button>
+      </header>
+
+      <div class="max-width-container">
+
+        <!-- News Grid Container -->
+        <div class="news-grid" id="newsGrid">
+          <!-- Articles will be dynamically populated by news.js -->
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <!-- Create Event Modal -->
+  <div id="createEventModal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title">Create New Event</h2>
+        <button class="modal-close" id="closeModalBtn"><i class='bx bx-x'></i></button>
+      </div>
+
+      <!-- Steps Progress -->
+      <div class="wizard-progress">
+        <div class="step-indicator active" data-step="1"></div>
+        <div class="step-indicator" data-step="2"></div>
+        <div class="step-indicator" data-step="3"></div>
+        <div class="step-indicator" data-step="4"></div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Step 1: Basic Info -->
+        <div class="wizard-step active" data-step="1">
+          <h3 class="step-title">Let's Start with the Basics</h3>
+          <p class="step-subtitle">Give your event a catchy name to grab attention.</p>
+
+          <div class="two-column-grid">
+            <div class="form-group">
+              <label class="form-label">Event Title (English)</label>
+              <input type="text" class="input" placeholder="e.g., Annual Tech Summit 2025">
+              <small class="form-hint">Keep it short and punchy (max 60 chars).</small>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Event Title (Arabic)</label>
+              <input type="text" class="input" placeholder="e.g., القمة التكنولوجية السنوية ٢٠٢٥" dir="rtl">
+              <small class="form-hint">Optional, but great for wider reach.</small>
+            </div>
+          </div>
+
+          <div class="two-column-grid">
+            <div class="form-group">
+              <label class="form-label">Event Type</label>
+              <select class="input">
+                <option value="" disabled selected>Select a type...</option>
+                <option value="workshop">Workshop - Hands-on learning</option>
+                <option value="seminar">Seminar - Expert talk</option>
+                <option value="concert">Concert - Music & Arts</option>
+                <option value="career">Career Talk - Professional growth</option>
+                <option value="networking">Networking - Meet new people</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Organizer Name</label>
+              <input type="text" class="input" placeholder="e.g., GIU Robotics Club">
+              <small class="form-hint">Student club, Department, or NGO.</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Event Poster</label>
+            <div class="img-upload-box">
+              <div class="icon-box icon-box-primary" style="margin: 0 auto 12px;">
+                <i class='bx bx-image-add' style="font-size: 24px;"></i>
+              </div>
+              <p style="font-weight: 600; color: var(--color-primary);">Click to upload high-quality poster</p>
+              <span class="form-hint">Recommended size: 1200x630px (JPG, PNG). Make it pop!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Time & Location -->
+        <div class="wizard-step" data-step="2">
+          <h3 class="step-title">When & Where?</h3>
+          <p class="step-subtitle">Help students plan their schedule.</p>
+
+          <div class="form-group">
+            <label class="form-label">Event Date</label>
+            <input type="date" class="input">
+          </div>
+
+          <div class="two-column-grid">
+            <div class="form-group">
+              <label class="form-label">Start Time</label>
+              <input type="time" class="input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">End Time</label>
+              <input type="time" class="input">
+            </div>
+          </div>
+
+          <div class="two-column-grid">
+            <div class="form-group">
+              <label class="form-label">Location</label>
+              <input type="text" class="input" placeholder="e.g., Building B, Hall 3">
+              <small class="form-hint">Be specific. If online, paste the Zoom/Teams link here.</small>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Capacity</label>
+              <input type="number" class="input" placeholder="e.g., 50">
+              <small class="form-hint">Leave blank if unlimited.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Event Details -->
+        <div class="wizard-step" data-step="3">
+          <h3 class="step-title">Tell Us More</h3>
+          <p class="step-subtitle">Get students excited about attending.</p>
+
+          <div class="form-group">
+            <label class="form-label">Short Description (Preview)</label>
+            <textarea class="input" rows="2"
+              placeholder="Join us for an immersive day of coding and collaboration..."></textarea>
+            <small class="form-hint">This appears on the card preview (max 140 chars).</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Full Description</label>
+            <textarea class="input" rows="5"
+              placeholder="Detailed Agenda: \n\n10:00 AM - Opening Keynote\n11:30 AM - Workshop Session 1\n01:00 PM - Lunch Break & Networking\n...\n\nWhy attend? Learn from industry experts and boost your skills!"></textarea>
+            <small class="form-hint">Include the agenda, "why attend", and any prerequisites.</small>
+          </div>
+        </div>
+
+        <!-- Step 4: Extras -->
+        <div class="wizard-step" data-step="4">
+          <h3 class="step-title">The Cherry on Top</h3>
+          <p class="step-subtitle">Add some extra appeal to your event.</p>
+
+          <div class="form-group">
+            <label class="form-label">Featured Speakers</label>
+            <input type="text" class="input" placeholder="e.g., Dr. Sarah Ahmed (AI Researcher), John Doe (CEO)">
+            <small class="form-hint">Separate names with commas.</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What Attendees Will Get</label>
+            <div class="list-grid"
+              style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 8px;">
+              <label style="display: flex; gap: 8px; align-items: center; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px;"> <span>Certificate of Attendance</span>
+              </label>
+              <label style="display: flex; gap: 8px; align-items: center; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px;"> <span>Free Snacks/Refreshments</span>
+              </label>
+              <label style="display: flex; gap: 8px; align-items: center; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px;"> <span>Networking Opportunities</span>
+              </label>
+              <label style="display: flex; gap: 8px; align-items: center; cursor: pointer;">
+                <input type="checkbox" style="width: 16px; height: 16px;"> <span>Exclusive Merch/Swag</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="prevBtn" style="visibility: hidden;">Back</button>
+        <button class="btn btn-primary" id="nextBtn">Next Step</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="news.js"></script>
+</body>
+
+</html>

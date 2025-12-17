@@ -1,0 +1,234 @@
+/* =========================
+   GLOBAL
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Bungee', cursive;
+}
+
+/* =========================
+   LOGIN PAGE BACKGROUND
+========================= */
+.login-page {
+    height: 100vh;
+}
+
+.login-bg {
+    height: 100%;
+    background: radial-gradient(circle at center,
+            #ffffff 0%,
+            #e7b1b1 35%,
+            #b05a6b 70%,
+            #5a1c2b 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+.login-header {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    z-index: 1;
+    /* Above background */
+}
+
+.logo {
+    height: 70px;
+}
+
+/* =========================
+   CARD LAYOUT
+========================= */
+.login-wrapper {
+    position: relative;
+    width: 900px;
+    max-width: 90%;
+    min-height: 420px;
+    height: auto;
+    z-index: 1;
+    /* Above background */
+}
+
+/* BACK SHADOW CARD */
+.login-card-back {
+    position: absolute;
+    inset: 0;
+    background: #3b0718;
+    border-radius: 28px;
+    transform: translate(35px, 35px);
+}
+
+/* FRONT CARD */
+.login-card {
+    position: absolute;
+    inset: 0;
+    min-height: 100%;
+    background: #f7ece9;
+    border-radius: 28px;
+    padding: 60px 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+   FORM
+========================= */
+.login-form {
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.field label {
+    width: 200px;
+    color: #3b0718;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.field input {
+    flex: 1;
+    height: 38px;
+    border-radius: 20px;
+    border: none;
+    padding: 0 18px;
+    background: #ffffff;
+    font-family: 'Bungee', cursive;
+    font-size: 14px;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+/* =========================
+   LINKS & TEXT
+========================= */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin: -12px 0 24px;
+    font-size: 10px;
+    color: #3b0718;
+    text-decoration: none;
+}
+
+.new-user-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #3b0718;
+}
+
+.create-account {
+    display: block;
+    text-align: center;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #3b0718;
+    text-decoration: none;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.login-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    background: #e6464a;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 26px;
+    font-family: 'Bungee', cursive;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #c93b3f;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .login-wrapper {
+        height: auto;
+    }
+
+    .login-card {
+        padding: 40px;
+    }
+
+    .field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .field label {
+        margin-bottom: 8px;
+    }
+
+    .login-btn {
+        position: static;
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+/* ========================================
+   INTERACTIVE BACKGROUND
+   ======================================== */
+.grid-background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    /* Behind content but above body background */
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-auto-rows: var(--dot-size);
+    grid-auto-flow: row dense;
+    gap: var(--gap);
+    box-sizing: border-box;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.dot {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background: radial-gradient(circle at 33% 28%,
+            rgba(255, 255, 255, 0.15),
+            transparent 25%),
+        radial-gradient(circle at 70% 62%, rgba(0, 0, 0, 0.1), transparent 45%),
+        var(--dot-color);
+    position: relative;
+    transform: translateZ(0);
+    will-change: box-shadow, transform;
+    opacity: 0.7;
+}

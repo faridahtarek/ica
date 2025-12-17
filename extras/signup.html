@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nawara | Sign Up</title>
+
+    <!-- Google Font (Bungee) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="extras.css">
+    <style>
+        /* Override specific to signup to fix label spacing */
+        .signup-field label {
+            width: 280px;
+            /* Give a bit more space for longer labels like "Major/Field" */
+            font-size: 16px;
+            /* Slightly smaller to fit */
+        }
+
+        /* Adjust wrapper for longer content specifically on this page if needed, 
+           but CSS change to min-height should handle it. */
+        .login-wrapper {
+            margin-top: 40px;
+            /* Add some top margin so it doesn't hit the logo */
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body class="login-page" style="height: auto; min-height: 100vh; overflow-y: auto;">
+
+    <!-- BACKGROUND -->
+    <div class="login-bg" style="height: auto; min-height: 100%; padding: 100px 0;">
+        <div id="grid" class="grid-background"></div>
+
+        <!-- LOGO -->
+        <header class="login-header" style="position: absolute; top: 20px; left: 40px;">
+            <a href="../homepage/index.html">
+                <img src="../homepage/logo.png" alt="Nawara Logo" class="logo" style="width: 150px; height: auto;">
+            </a>
+        </header>
+
+        <!-- CARD WRAPPER -->
+        <div class="login-wrapper" style="height: auto; min-height: 600px;">
+
+            <!-- BACK SHADOW CARD -->
+            <div class="login-card-back" style="height: 100%;"></div>
+
+            <!-- FRONT CARD -->
+            <div class="login-card" style="position: relative; height: auto; min-height: 100%;">
+
+                <form class="login-form" action="../homepage/index.html">
+
+                    <!-- Stacked fields to avoid layout breaking -->
+                    <div class="field signup-field">
+                        <label for="fname">FIRST NAME</label>
+                        <input type="text" id="fname" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="lname">LAST NAME</label>
+                        <input type="text" id="lname" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="email">EMAIL ADDRESS</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="major">MAJOR / FIELD</label>
+                        <input type="text" id="major" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="dob">DATE OF BIRTH</label>
+                        <input type="date" id="dob" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="accountType">ACCOUNT TYPE</label>
+                        <select id="accountType"
+                            style="flex: 1; height: 38px; border-radius: 20px; border: none; padding: 0 18px; font-family: 'Bungee';">
+                            <option value="student">Student</option>
+                            <option value="graduate">Graduate</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <div class="field signup-field">
+                        <label for="confirmPass">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirmPass" required>
+                    </div>
+
+                    <p class="new-user-text" style="margin-top: 20px;">
+                        ALREADY HAVE AN ACCOUNT?
+                    </p>
+
+                    <a href="login.html" class="create-account">
+                        LOGIN HERE
+                    </a>
+
+                    <!-- Button navigating to index.html via form action -->
+                    <button type="submit" class="login-btn"
+                        style="position: relative; right: auto; bottom: auto; display: block; margin: 24px auto 0;">
+                        SIGN UP
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="background.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Planner - Nawara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo">
+        <img src="logo.png" alt="Nawara Logo" class="logo-img">
+      </a>
+      <nav class="sidebar-nav">
+        <a href="scholarships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+          <span>SCHOLARSHIPS</span>
+        </a>
+        <a href="internships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+            <path d="M9 22v-4h6v4" />
+            <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+          </svg>
+          <span>INTERNSHIPS</span>
+        </a>
+        <a href="cv-analyzer.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" x2="8" y1="13" y2="13" />
+            <line x1="16" x2="8" y1="17" y2="17" />
+          </svg>
+          <span>CV ANALYZER</span>
+        </a>
+        <a href="map.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>MAP</span>
+        </a>
+        <a href="budget.html" class="nav-link active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" />
+            <line x1="8" x2="16" y1="6" y2="6" />
+            <line x1="16" x2="16" y1="14" y2="18" />
+            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
+          </svg>
+          <span>BUDGET<br>AND EXPENSES</span>
+        </a>
+        <a href="news.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+            <path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z" />
+          </svg>
+          <span>NEWS<br>AND EVENTS</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="user-profile.html" class="user-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="page-header animate-slide-in">
+        <h1 class="page-title">BUDGET PLANNER</h1>
+        <p class="page-subtitle">those matcha lattes do add up, dont they?</p>
+      </header>
+
+      <div class="max-width-container">
+
+        <div class="three-column-grid" style="margin-bottom: 32px;">
+          <div class="card stat-card animate-fade-in delay-1">
+            <div class="icon-box icon-box-accent" style="margin-bottom: 16px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="12" x2="12" y1="2" y2="22" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <p id="monthlyIncomeDisplay" class="stat-value">4,500 EGP</p>
+            <p class="stat-label">Monthly Income</p>
+          </div>
+          <div class="card stat-card animate-fade-in delay-2">
+            <div class="icon-box icon-box-accent" style="margin-bottom: 16px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect width="16" height="20" x="4" y="2" rx="2" />
+                <line x1="8" x2="16" y1="6" y2="6" />
+              </svg>
+            </div>
+            <p id="totalExpensesDisplay" class="stat-value">3,150 EGP</p>
+            <p class="stat-label">Total Expenses</p>
+          </div>
+          <div class="card stat-card animate-fade-in delay-3">
+            <div class="icon-box icon-box-accent" style="margin-bottom: 16px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <p id="remainingDisplay" class="stat-value">1,350 EGP</p>
+            <p class="stat-label">Remaining</p>
+          </div>
+        </div>
+
+        <button id="addExpenseBtn" class="btn btn-primary animate-fade-in delay-4"
+          style="margin-bottom: 32px; width: 100%;">
+          Add New Expense
+        </button>
+
+        <div class="charts-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
+          <div class="card chart-card animate-fade-in delay-5">
+            <h3 class="chart-title" style="margin-bottom: 16px; font-size: 18px; font-weight: 700;">Expense Breakdown
+            </h3>
+            <div class="chart-container" style="position: relative; height: 250px;">
+              <canvas id="expensePieChart"></canvas>
+            </div>
+          </div>
+          <div class="card chart-card animate-fade-in delay-5">
+            <h3 class="chart-title" style="margin-bottom: 16px; font-size: 18px; font-weight: 700;">Monthly Trend</h3>
+            <div class="chart-container" style="position: relative; height: 250px;">
+              <canvas id="expenseBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title" style="margin-bottom: 16px;">EXPENSE CATEGORIES</h2>
+        <div id="expenseListContainer" class="featured-grid">
+          <div class="card action-card animate-fade-in delay-6"
+            style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="icon-box icon-box-primary" style="margin: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                  <circle cx="7" cy="17" r="2" />
+                  <path d="M9 17h6" />
+                  <circle cx="17" cy="17" r="2" />
+                </svg>
+              </div>
+              <span style="font-weight: 700; color: var(--color-primary);">Transport</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700;">600 EGP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="var(--color-accent)" stroke-width="2">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+          </div>
+          <div class="card action-card animate-fade-in delay-7"
+            style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="icon-box icon-box-primary" style="margin: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                  <line x1="6" x2="6" y1="1" y2="4" />
+                  <line x1="10" x2="10" y1="1" y2="4" />
+                  <line x1="14" x2="14" y1="1" y2="4" />
+                </svg>
+              </div>
+              <span style="font-weight: 700; color: var(--color-primary);">Taamia</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700;">1,200 EGP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#22c55e" stroke-width="2">
+                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
+                <polyline points="16 17 22 17 22 11" />
+              </svg>
+            </div>
+          </div>
+          <div class="card action-card animate-fade-in delay-8"
+            style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="icon-box icon-box-primary" style="margin: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M3 14h18" />
+                  <path d="M4 10h16" />
+                  <path d="M5 6h14" />
+                  <path d="M5 18h14" />
+                </svg>
+              </div>
+              <span style="font-weight: 700; color: var(--color-primary);">Groceries</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700;">800 EGP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="var(--color-accent)" stroke-width="2">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+          </div>
+          <div class="card action-card animate-fade-in delay-9"
+            style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="icon-box icon-box-primary" style="margin: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                  <line x1="6" x2="6" y1="1" y2="4" />
+                  <line x1="10" x2="10" y1="1" y2="4" />
+                  <line x1="14" x2="14" y1="1" y2="4" />
+                </svg>
+              </div>
+              <span style="font-weight: 700; color: var(--color-primary);">Matcha / Coffee</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700;">350 EGP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#22c55e" stroke-width="2">
+                <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
+                <polyline points="16 17 22 17 22 11" />
+              </svg>
+            </div>
+          </div>
+          <div class="card action-card animate-fade-in delay-10"
+            style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div class="icon-box icon-box-primary" style="margin: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M2 12h20" />
+                  <path d="M12 2a10 10 0 0 1 10 10M2 12a10 10 0 0 1 10-10" transform="rotate(-45 12 12)" />
+                </svg>
+              </div>
+              <span style="font-weight: 700; color: var(--color-primary);">Utilities & Internet</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700;">200 EGP</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="var(--color-accent)" stroke-width="2">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Add Expense Modal -->
+    <div id="addExpenseModal" class="modal"
+      style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); align-items: center; justify-content: center;">
+      <div class="modal-content card"
+        style="background-color: var(--color-card); margin: auto; padding: 24px; border: 1px solid var(--color-border); width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+        <h2 style="margin-bottom: 24px; font-size: 20px;">Add New Expense</h2>
+        <div style="margin-bottom: 16px;">
+          <label
+            style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: var(--color-muted);">Expense
+            Type</label>
+          <input id="expenseTypeInput" type="text" class="input" placeholder="e.g. Metro, Lunch" style="width: 100%;">
+        </div>
+        <div style="margin-bottom: 24px;">
+          <label
+            style="display: block; margin-bottom: 8px; font-weight: 700; font-size: 14px; color: var(--color-muted);">Amount
+            Paid</label>
+          <input id="expenseAmountInput" type="number" class="input" placeholder="EGP" style="width: 100%;">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <button id="closeModalBtn" class="btn btn-outline">Cancel</button>
+          <button id="confirmAddExpenseBtn" class="btn btn-primary">Add Expense</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

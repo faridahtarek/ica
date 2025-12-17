@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map - Nawara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Leaflet CSS for the free map API -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo">
+        <img src="logo.png" alt="Nawara Logo" class="logo-img">
+      </a>
+      <nav class="sidebar-nav">
+        <a href="scholarships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+          <span>SCHOLARSHIPS</span>
+        </a>
+        <a href="internships.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+            <path d="M9 22v-4h6v4" />
+            <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+          </svg>
+          <span>INTERNSHIPS</span>
+        </a>
+        <a href="cv-analyzer.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" x2="8" y1="13" y2="13" />
+            <line x1="16" x2="8" y1="17" y2="17" />
+          </svg>
+          <span>CV ANALYZER</span>
+        </a>
+        <a href="map.html" class="nav-link active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>MAP</span>
+        </a>
+        <a href="budget.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="16" height="20" x="4" y="2" rx="2" />
+            <line x1="8" x2="16" y1="6" y2="6" />
+            <line x1="16" x2="16" y1="14" y2="18" />
+            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" />
+          </svg>
+          <span>BUDGET<br>AND EXPENSES</span>
+        </a>
+        <a href="news.html" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+            <path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z" />
+          </svg>
+          <span>NEWS<br>AND EVENTS</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="user-profile.html" class="user-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="page-header animate-slide-in">
+        <h1 class="page-title">INTERACTIVE MAP</h1>
+        <p class="page-subtitle">Discover universities, study spaces, and events near you</p>
+      </header>
+
+      <div class="max-width-container">
+
+        <div class="search-bar" style="margin-bottom: 24px;">
+          <div class="input-wrapper" style="flex: 1;">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="text" class="input" placeholder="Search locations...">
+          </div>
+        </div>
+
+        <div class="two-column-grid">
+          <!-- Replaced placeholder with interactive map using Leaflet (free OpenStreetMap API) -->
+          <div class="card animate-fade-in delay-1" style="padding: 0;">
+            <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+          </div>
+
+          <div class="list-grid">
+            <div class="card action-card animate-fade-in delay-2" style="padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="icon-box icon-box-primary" style="width: 40px; height: 40px; margin: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--color-primary); font-size: 14px;">Cairo University</h4>
+                  <p style="font-size: 12px; color: var(--color-muted);">University · Cairo</p>
+                </div>
+                <button class="btn btn-outline"
+                  style="padding: 4px 12px; font-size: 11px; margin-left: auto; border-radius: 20px;"
+                  onclick="window.open('https://www.google.com/maps/search/?api=1&query=Cairo+University', '_blank'); event.stopPropagation();">
+                  Get Directions
+                </button>
+              </div>
+            </div>
+            <div class="card action-card animate-fade-in delay-3" style="padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="icon-box icon-box-primary" style="width: 40px; height: 40px; margin: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--color-primary); font-size: 14px;">AUC New Campus</h4>
+                  <p style="font-size: 12px; color: var(--color-muted);">University · New Cairo</p>
+                </div>
+                <button class="btn btn-outline"
+                  style="padding: 4px 12px; font-size: 11px; margin-left: auto; border-radius: 20px;"
+                  onclick="window.open('https://www.google.com/maps/search/?api=1&query=AUC+New+Cairo', '_blank'); event.stopPropagation();">
+                  Get Directions
+                </button>
+              </div>
+            </div>
+            <div class="card action-card animate-fade-in delay-4" style="padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="icon-box icon-box-primary" style="width: 40px; height: 40px; margin: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--color-primary); font-size: 14px;">Bibliotheca Alexandrina
+                  </h4>
+                  <p style="font-size: 12px; color: var(--color-muted);">Study Space · Alexandria</p>
+                </div>
+                <button class="btn btn-outline"
+                  style="padding: 4px 12px; font-size: 11px; margin-left: auto; border-radius: 20px;"
+                  onclick="window.open('https://www.google.com/maps/search/?api=1&query=Bibliotheca+Alexandrina', '_blank'); event.stopPropagation();">
+                  Get Directions
+                </button>
+              </div>
+            </div>
+            <div class="card action-card animate-fade-in delay-5" style="padding: 16px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="icon-box icon-box-primary" style="width: 40px; height: 40px; margin: 0;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-weight: 700; color: var(--color-primary); font-size: 14px;">GUC Campus</h4>
+                  <p style="font-size: 12px; color: var(--color-muted);">University · New Cairo</p>
+                </div>
+                <button class="btn btn-outline"
+                  style="padding: 4px 12px; font-size: 11px; margin-left: auto; border-radius: 20px;"
+                  onclick="window.open('https://www.google.com/maps/search/?api=1&query=GUC+New+Cairo', '_blank'); event.stopPropagation();">
+                  Get Directions
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <!-- Leaflet JS for the free map API -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Initialize the map centered on Egypt
+    var map = L.map('map').setView([30.0444, 31.2357], 7); // Coordinates for Cairo, zoom level 7
+
+    // Add OpenStreetMap tiles (free, no API key needed)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add markers for the listed locations (approximate coordinates)
+    L.marker([30.0444, 31.2357]).addTo(map).bindPopup('<b>Cairo University</b><br>University · Cairo<br><a href="https://www.google.com/maps/search/?api=1&query=Cairo+University" target="_blank" style="display:inline-block; margin-top:8px; color:#5c2a3d; font-weight:700; text-decoration:none;">Get Directions &rarr;</a>');
+    L.marker([30.0074, 31.4913]).addTo(map).bindPopup('<b>AUC New Campus</b><br>University · New Cairo<br><a href="https://www.google.com/maps/search/?api=1&query=AUC+New+Cairo" target="_blank" style="display:inline-block; margin-top:8px; color:#5c2a3d; font-weight:700; text-decoration:none;">Get Directions &rarr;</a>');
+    L.marker([31.2058, 29.9092]).addTo(map).bindPopup('<b>Bibliotheca Alexandrina</b><br>Study Space · Alexandria<br><a href="https://www.google.com/maps/search/?api=1&query=Bibliotheca+Alexandrina" target="_blank" style="display:inline-block; margin-top:8px; color:#5c2a3d; font-weight:700; text-decoration:none;">Get Directions &rarr;</a>');
+    L.marker([30.0074, 31.4913]).addTo(map).bindPopup('<b>GUC Campus</b><br>University · New Cairo<br><a href="https://www.google.com/maps/search/?api=1&query=GUC+New+Cairo" target="_blank" style="display:inline-block; margin-top:8px; color:#5c2a3d; font-weight:700; text-decoration:none;">Get Directions &rarr;</a>'); // Assuming similar location to AUC
+  </script>
+</body>
+
+</html>
